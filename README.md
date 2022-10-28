@@ -36,7 +36,7 @@ git add .   -- #to upload all the files
 git log  --- #to check the  created versions of the apps (with head point to the current version)
 '''
 
-< Note: To ignore a file or folder from  git  we can add the file or folder name in .gitinore folder
+< Note: To ignore a file or folder from  git  we can add the file or folder name in .gitignore folder
 '''
 
 git commit -m "message"------ #To create version/ commit all changes by git
