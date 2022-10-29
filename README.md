@@ -83,4 +83,21 @@ To stop docker container
 '''
 docker stop <container_id>
 '''
+Gunicorn command 
+'''
+CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT <module name>:<flask object>
+'''
 
+To install all the requirements use
+'''
+python setup.py install
+'''
+
+packages = find_packages()
+# will search our code and return all the packages which have __init__ in there names.
+'''
+install_requires "holds all the external packages needed by us for our use
+
+'''
+<-e . library > in absence of it " pip install -r reruirements.txt" will only install the external libraries and not the internal ones with __ init__.py names on updation of the versions
+'''
