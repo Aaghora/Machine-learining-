@@ -19,6 +19,7 @@ pip install -r requirements.txt
 '''
 creating App.py folder
 '''
+python app.py #to run the app.
 
 '''
 git commands
