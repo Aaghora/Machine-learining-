@@ -102,3 +102,7 @@ install_requires "holds all the external packages needed by us for our use
 '''
 <-e . library > in absence of it " pip install -r reruirements.txt" will only install the external libraries and not the internal ones with __ init__.py names on updation of the versions
 '''
+install ipykernel
+'''
+pip install ipykernel
+'''
