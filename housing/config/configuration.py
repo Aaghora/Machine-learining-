@@ -1,11 +1,12 @@
-from distutils.command.config import config
-from tkinter import E
+#from distutils.command.config import config
+#from tkinter import E
 from housing.entity.config_entity import DataIngestionConfig, DataTransformationConfig, DataValidationConfig, \
 ModelTrainerConfig, ModelEvaluationConfig, ModelPusherConfig, TrainingPipelineConfig
 from housing.util.util import read_yaml_file
 from housing.constant import *
 from housing.exception import HousingException
 from housing.logger import logging
+import sys, os
 
 
 
