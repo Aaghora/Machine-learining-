@@ -1,5 +1,3 @@
-#from tkinter import E
-from curses import raw
 from housing.entity.config_entity import DataIngestionConfig
 import sys,os
 from housing.exception import HousingException
@@ -64,10 +62,9 @@ class DataIngestion:
             logging.info(f"Reading csv file:[{housing_file_path}]")
 
             housing_data_frame= pd.read_csv(housing_file_path)
-            housing_data_frame["income_cat"]=pd.cut(
-                housing_data_frame["median_income"],
-                bins=[0.0,1.5,3.0,4.5,6.0,np.inf]
-                labels=[1,2,3,4,5]   
+            housing_data_frame["income_cat"]=pd.cut(housing_data_frame["median_income"],
+                                                    bins=[0.0,1.5,3.0,4.5,6.0,np.inf],
+                                                    labels=[1,2,3,4,5]   
             )
             logging.info(f"Splitting data into train and test")
             strat_train_set =None
@@ -110,7 +107,7 @@ class DataIngestion:
 
     def __del__(self):
         logging.info(f"{'=*20'}Data Ingestion log completed. {'='*20} \n\n")
-        
+
 
             
 

@@ -1,5 +1,3 @@
-#from distutils.command.config import config
-#from tkinter import E
 from housing.entity.config_entity import DataIngestionConfig, DataTransformationConfig, DataValidationConfig, \
 ModelTrainerConfig, ModelEvaluationConfig, ModelPusherConfig, TrainingPipelineConfig
 from housing.util.util import read_yaml_file
@@ -70,9 +68,9 @@ class Configuration:
             )
             data_validation_config= self.config_info[DATA_VALIDATION_CONFIG_KEY]
             schema_file_path =os.path.join(ROOT_DIR,
-                                            data_validation_config[DATA_VALIDATION_SCHEMA_DIR_KEY]
+                                            data_validation_config[DATA_VALIDATION_SCHEMA_DIR_KEY],
                                             data_validation_config[DATA_VALIDATION_SCHEMA_FILE_NAME_KEY]
-            )
+                                            )
             report_file_path =os.path.join(data_validation_artifact_dir,
                                             data_validation_config[DATA_VALIDATION_REPORT_FILE_NAME_KEY]
             )
@@ -157,7 +155,7 @@ class Configuration:
         except Exception as e:
             raise HousingException(e,sys) from e
 
-    def get_model_evaluation_config(sefl) -> ModelEvaluationConfig:
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         try:
             model_evaluation_config = self.config_info[MODEL_EVALUATION_CONFIG_KEY]
             artifact_dir = os.path.join(self.training_pipeline_config.artifact_dir,
@@ -193,7 +191,7 @@ class Configuration:
     def get_training_pipeline_config(self) ->TrainingPipelineConfig:
         try:
             training_pipeline_config = self.config_info[TRAINING_PIPELINE_CONFIG_KEY]
-            artifact_dir = os.path.join(ROT_DIR,
+            artifact_dir = os.path.join(ROOT_DIR,
             training_pipeline_config[TRAINING_PIPELINE_NAME_KEY],
             training_pipeline_config[TRAINING_PIPELINE_ARTIFACT_DIR_KEY]
             )
