@@ -17,7 +17,7 @@ class DataIngestion:
         try:
             pass
         except Exception as e:
-            raise HousingException(e, sys) from E
+            raise HousingException(e, sys) from e
 
             
 
