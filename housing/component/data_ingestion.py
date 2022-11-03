@@ -88,7 +88,7 @@ class DataIngestion:
                 os.makedirs(self.data_ingestion_config.ingested_test_dir,exist_ok=True)
                 logging.info(f"Exporting testing data to file: [{test_file_path}]")
                 strat_test_set.to_csv(test_file_path, index=False)
-            data_ingestion_artifact= DataIngestionArtifact(train_filepath=train_file_path,
+            data_ingestion_artifact= DataIngestionArtifact(train_file_path=train_file_path,
                                                             test_file_path=test_file_path,
                                                             is_ingested=True,
                                                             message=f"Data ingestion completed successfully")
