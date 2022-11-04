@@ -64,7 +64,7 @@ class DataValidation:
         try:
             validation_status = False
             
-            #Assigment validate training and testing dataset using schema file
+            #TO DO
             #1. Number of Column
             #2. Check the value of ocean proximity 
             # acceptable values     
