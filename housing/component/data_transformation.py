@@ -111,6 +111,7 @@ class DataTransformation:
             dataset_schema = read_yaml_file(file_path=schema_file_path)
 
             numerical_columns = dataset_schema[NUMERICAL_COLUMN_KEY]
+            
             categorical_columns = dataset_schema[CATEGORICAL_COLUMN_KEY]
 
 
@@ -215,6 +216,8 @@ class DataTransformation:
             return data_transformation_artifact
         except Exception as e:
             raise HousingException(e,sys) from e
+
+    
 
     def __del__(self):
         logging.info(f"{'>>'*30}Data Transformation log completed.{'<<'*30} \n\n")

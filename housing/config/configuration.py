@@ -152,6 +152,7 @@ class Configuration:
                 model_config_file_path=model_config_file_path
             )
             logging.info(f"Model trainer config: {model_trainer_config}")
+            return model_trainer_config
         except Exception as e:
             raise HousingException(e,sys) from e
 

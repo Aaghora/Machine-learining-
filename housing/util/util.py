@@ -1,5 +1,3 @@
-#Util is used to create a helper function it is not part of pipeline
-
 import yaml
 from housing.exception import HousingException
 import os,sys
